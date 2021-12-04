@@ -1,0 +1,16 @@
+<div class="toolbar">
+  <div class="left-group">
+    <div class="logo">
+      <router-link :to="currentCabinet">
+        <img src="assets/img/logo_sm.png" />
+      </router-link>
+    </div>
+  </div>
+  <div class="network">
+    <input type="text" placeholder="Search Content" v-model="search" />
+    <!--<network-select-input></network-select-input>-->
+  </div>
+  <div class="account">
+    <account-select-input></account-select-input>
+  </div>
+</div>

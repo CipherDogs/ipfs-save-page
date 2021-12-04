@@ -1,0 +1,34 @@
+<div id="import-account" class="padding-container">
+  <h2>Save and Link Content</h2>
+
+  <div v-if="contentHash">
+    <h3>IPFS hash:</h3>
+    <div>
+      <pretty-hash :hash="contentHash"></pretty-hash>
+    </div>
+    <h3>Content details:</h3>
+    <div><b>Size:</b> {{size | prettySize}}</div>
+  </div>
+  <div v-else>
+    <h3>IPFS hash:</h3>
+    <input type="text" v-model="inputContentHash" />
+  </div>
+
+  <!--
+  <h3>Description:</h3>
+  <textarea v-model="inputDescription"></textarea>
+  -->
+
+  <div v-if="keywordsStr">
+    <h3>Keywords:</h3>
+    <div>{{keywordsStr}}</div>
+  </div>
+  <div v-else>
+    <h3>Keywords: (separate by comma)</h3>
+    <input type="text" v-model="inputKeywordsStr" />
+  </div>
+
+  <div class="button-container">
+    <button @click="saveAndLink()" :disabled="disableSaveAndLink">Save and Link</button>
+  </div>
+</div>

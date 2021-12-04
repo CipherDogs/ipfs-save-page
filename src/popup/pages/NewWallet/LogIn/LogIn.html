@@ -1,0 +1,23 @@
+<div id="create-wallet">
+  <div class="back" v-if="$route.query.from">
+    <a href @click.prevent="$route.query.from === 'restore' ? $router.push({name: 'ask-restore-backup'}) : $router.push({name: 'new-wallet-method'})">< Back</a>
+  </div>
+
+  <div class="header-logo">
+    <img src="assets/img/logo_lg.png" />
+    <!--<h3>Cyb Extension</h3>-->
+  </div>
+
+  <div class="password-container">
+    <h4>Please enter password for access to encrypted seed phrase and private keys.</h4>
+
+    <div>
+      <div>Password</div>
+      <input v-model="password" type="password" />
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button @click="login" :disabled="loginDisabled">Log In</button>
+  </div>
+</div>

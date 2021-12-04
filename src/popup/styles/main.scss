@@ -1,0 +1,194 @@
+//@import '~vue-material/src/components/MdElevation/elevation';
+
+$fa-font-path: 'webfonts';
+@import '~font-awesome/scss/solid';
+@import '~font-awesome/scss/fontawesome';
+
+@import 'loading';
+@import 'elements';
+
+@font-face {
+  font-family: Play;
+  src: url('../../fonts/Play.woff2');
+  src: url('../../fonts/Play.eot'); /* IE9 Compat Modes */
+  src: url('../../fonts/Play.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../../fonts/Play.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../../fonts/Play.woff') format('woff'), /* Pretty Modern Browsers */ url('../../fonts/Play.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../../fonts/Play.svg#Play') format('svg'); /* Legacy iOS */
+}
+
+body {
+  font-family: Play;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+  font-family: Play;
+}
+
+.back {
+  align-self: flex-start;
+  margin-left: 10%;
+}
+
+#popup {
+  width: 357px;
+  height: 600px;
+  border: 1px solid rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  color: rgb(124, 124, 124);
+}
+
+.input-absolute-container {
+  z-index: 9999;
+  position: absolute;
+  top: 46px;
+  left: 10%;
+  width: 80%;
+  .background {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+  .content {
+    box-shadow: rgb(54, 214, 174) 0px 0px 10px 1px;
+    position: relative;
+    z-index: 99999;
+    color: rgb(54, 214, 174);
+    padding: 20px 30px;
+  }
+}
+
+.padding-container {
+  padding: 0 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 66px;
+  padding: 12px 6px;
+  .logo {
+    width: 42px;
+    height: 42px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .avatar {
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    display: block;
+  }
+  .right-group {
+    display: flex;
+  }
+}
+
+#new-wallet-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .header-logo {
+    //align-self: flex-start;
+    //justify-self: flex-start;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    img {
+      height: 60px;
+      //margin-right: 15px;
+    }
+  }
+
+  #welcome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .logo {
+      width: 125px;
+      height: 125px;
+      img {
+        max-width: 100%;
+      }
+    }
+    & > * {
+      max-width: 200px;
+      text-align: center;
+    }
+  }
+
+  #new-wallet-method {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    .methods {
+      & > div:first-child {
+        margin-bottom: 40px;
+      }
+    }
+
+    & > * {
+      max-width: 80%;
+    }
+  }
+
+  #create-wallet {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    //text-align: center;
+
+    & > * {
+      max-width: 80%;
+    }
+    .password-container h4 {
+      margin-bottom: 10px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.button-container {
+  width: 80%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.account-select-container {
+  .add-new-account {
+    margin-top: 15px;
+  }
+  .content {
+    border-radius: 5px;
+  }
+}
+
+.md-drawer.md-theme-default {
+  padding: 20px;
+  width: 250px;
+}
+.pretty-hex-container {
+  white-space: nowrap;
+}
+.cyber-cabinet-address,
+.cyber-cabinet-balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

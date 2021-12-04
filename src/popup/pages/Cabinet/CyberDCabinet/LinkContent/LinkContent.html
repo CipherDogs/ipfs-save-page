@@ -1,0 +1,29 @@
+<div id="import-account" class="padding-container">
+  <div class="back" v-if="$route.query.from" style="margin-left: 0">
+    <router-link :to="{name: $route.query.from}">< Back</router-link>
+  </div>
+
+  <h2>Link Content</h2>
+
+  <div v-if="contentHash">
+    <h3>IPFS hash:</h3>
+    <div>
+      <pretty-hash :hash="contentHash"></pretty-hash>
+    </div>
+  </div>
+  <div v-else>
+    <h3>IPFS hash:</h3>
+    <input type="text" v-model="inputContentHash" />
+  </div>
+
+  <content-details :hash="resultContentHash"></content-details>
+
+  <div>
+    <h3>Keywords: (separate by comma)</h3>
+    <input type="text" v-model="inputKeywordsStr" />
+  </div>
+
+  <div class="button-container">
+    <button @click="link()" :disabled="disableLink">{{'Link'}}</button>
+  </div>
+</div>

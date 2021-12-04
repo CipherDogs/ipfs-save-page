@@ -1,0 +1,34 @@
+<div id="create-wallet">
+  <div class="back" v-if="$route.query.from">
+    <a href @click.prevent="$route.query.from === 'restore' ? $router.push({name: 'ask-restore-backup'}) : $router.push({name: 'new-wallet-method'})">< Back</a>
+  </div>
+
+  <div class="header-logo">
+    <img src="assets/img/logo_lg.png" />
+  </div>
+
+  <div class="seed-container" style="margin-top: 25px;">
+    <div>
+      <label>Enter your seed phrase</label>
+      <textarea v-model="seedPhrase"></textarea>
+    </div>
+  </div>
+
+  <div class="password-container">
+    <h4>Your seed phrase will be encrypted by this password.</h4>
+
+    <div>
+      <label>Enter password (min 8 chars)</label>
+      <input v-model="password" type="password" />
+    </div>
+
+    <div>
+      <label>Repeat password</label>
+      <input v-model="confirmPassword" type="password" />
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button @click="save" :disabled="saveDisabled">Save</button>
+  </div>
+</div>

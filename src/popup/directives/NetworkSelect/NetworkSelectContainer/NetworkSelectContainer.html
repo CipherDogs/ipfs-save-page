@@ -1,0 +1,12 @@
+<div class="input-absolute-container network-select-container" ref="container" xmlns:v-on="http://www.w3.org/1999/xhtml" :style="{'top': top}">
+  <div class="content" v-if="showContainer">
+    <h3>Networks</h3>
+
+    <div class="networks-list">
+      <div v-for="network in networkList" :class="{'active': network.value === currentNetwork}">
+        <router-link :to="{ name: 'cabinet-' + network.value }">{{network.title}}</router-link>
+      </div>
+    </div>
+  </div>
+  <div class="background" v-if="showContainer"></div>
+</div>
