@@ -21,34 +21,40 @@ export default {
         mimeType: this.$route.query.mimeType,
       });
 
-      try {
-        const keywordHashes = await addIpfsContentArray(this.resultKeywords);
+      this.$notify({
+        type: 'success',
+        text: 'Successfully saved and linked',
+      });
+      this.$router.push({ name: 'cabinet-cyberd' });
 
-        const results = await pIteration.mapSeries(keywordHashes, async keywordHash => {
-          return CyberD.link(
-            {
-              address: this.currentAccount.address,
-              privateKey: await AppWallet.decryptByPassword(this.currentAccount.encryptedPrivateKey),
-            },
-            keywordHash,
-            this.resultContentHash
-          );
-        });
+      // try {
+      //   const keywordHashes = await addIpfsContentArray(this.resultKeywords);
 
-        console.log('link results', results);
+      //   const results = await pIteration.mapSeries(keywordHashes, async keywordHash => {
+      //     return CyberD.link(
+      //       {
+      //         address: this.currentAccount.address,
+      //         privateKey: await AppWallet.decryptByPassword(this.currentAccount.encryptedPrivateKey),
+      //       },
+      //       keywordHash,
+      //       this.resultContentHash
+      //     );
+      //   });
 
-        this.$notify({
-          type: 'success',
-          text: 'Successfully saved and linked',
-        });
-        this.$router.push({ name: 'cabinet-cyberd' });
-      } catch (e) {
-        this.$notify({
-          type: 'error',
-          title: e && e.message ? e.message : e || 'Unknown error',
-          text: e && e.data ? e.data : '',
-        });
-      }
+      //   console.log('link results', results);
+
+      //   this.$notify({
+      //     type: 'success',
+      //     text: 'Successfully saved and linked',
+      //   });
+      //   this.$router.push({ name: 'cabinet-cyberd' });
+      // } catch (e) {
+      //   this.$notify({
+      //     type: 'error',
+      //     title: e && e.message ? e.message : e || 'Unknown error',
+      //     text: e && e.data ? e.data : '',
+      //   });
+      // }
     },
   },
   computed: {
@@ -71,7 +77,8 @@ export default {
       return this.$store.state[StorageVars.Account];
     },
     disableSaveAndLink() {
-      return !(this.contentHash || this.inputContentHash) || !(this.keywordsStr || this.inputKeywordsStr);
+      // return !(this.contentHash || this.inputContentHash) || !(this.keywordsStr || this.inputKeywordsStr);
+      return !(this.contentHash || this.inputContentHash);
     },
   },
   watch: {

@@ -62,6 +62,7 @@ module.exports = {
   },
 
   async getBackupIpld() {
+    await ipfsService.addBootNode('/dns4/ws-star.discovery.cybernode.ai/tcp/4430/wss/p2p/QmUgmRxoLtGERot7Y6G7UyF6fwvnusQZfGR15PuE6pY3aB');
     const extensionIpnsId = await this.createExtensionIpnsIfNotExists();
     const result = await ipfsService.resolveStaticId(extensionIpnsId);
     return result === extensionIpnsId ? null : result;

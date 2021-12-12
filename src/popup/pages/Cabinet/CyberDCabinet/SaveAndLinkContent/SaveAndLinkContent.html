@@ -19,16 +19,17 @@
   <textarea v-model="inputDescription"></textarea>
   -->
 
-  <div v-if="keywordsStr">
+  <!-- <div v-if="keywordsStr">
     <h3>Keywords:</h3>
     <div>{{keywordsStr}}</div>
   </div>
   <div v-else>
     <h3>Keywords: (separate by comma)</h3>
     <input type="text" v-model="inputKeywordsStr" />
-  </div>
+  </div> -->
 
   <div class="button-container">
-    <button @click="saveAndLink()" :disabled="disableSaveAndLink">Save and Link</button>
+    <!-- <button @click="saveAndLink()" :disabled="disableSaveAndLink">Save and Link</button> -->
+    <button @click="saveAndLink()" :disabled="disableSaveAndLink">Save</button>
   </div>
 </div>

@@ -66,6 +66,8 @@ export default {
       }
     });
 
+    // this.$router.push({ name: 'cabinet-cyberd' });
+
     this.init();
   },
 

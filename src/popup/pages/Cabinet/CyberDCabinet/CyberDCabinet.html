@@ -5,7 +5,7 @@
     </h2>
   </div>
 
-  <div class="cyber-cabinet-balance">
+  <!-- <div class="cyber-cabinet-balance">
     <h1 style="cursor: pointer;" @click="getBalance" title="Update balance">{{balanceStr}} {{eul}}</h1>
   </div>
 
@@ -17,7 +17,7 @@
     <h2>
       {{bandwidth.remained}} / {{bandwidth.maxValue}}
     </h2>
-  </div>
+  </div> -->
 
   <div>
     <h3>IPFS peers:</h3>
@@ -25,7 +25,10 @@
     <h2 v-else>{{ peersCount }}</h2>
   </div>
 
-  <button style="border: 0; cursor: pointer;" @click="downloadPage" :disabled="peersError || peersLoading" title="Download page to IPFS">
+  <!-- <button style="border: 0; cursor: pointer;" @click="downloadPage" :disabled="peersError || peersLoading" title="Download page to IPFS">
+    <i class="fas fa-file-download fa-2x"></i>
+  </button> -->
+  <button style="border: 0; cursor: pointer;" @click="downloadPage" title="Download page to IPFS">
     <i class="fas fa-file-download fa-2x"></i>
   </button>
   <router-link class="md-icon-button" :to="{name: 'cabinet-ipfs-saved-content'}" title="Saved content"><i class="fas fa-archive fa-2x"></i></router-link>

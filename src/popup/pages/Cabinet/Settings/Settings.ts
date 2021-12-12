@@ -33,13 +33,14 @@ export default {
             title: 'IPFS endpoint',
             data: getSettingData(name),
           };
-        } else if (name == 'storage-cyber-address') {
-          return {
-            name,
-            title: 'Cyber endpoint',
-            data: getSettingData(name),
-          };
         }
+        // } else if (name == 'storage-cyber-address') {
+        // return {
+        //   name,
+        //   title: 'Cyber endpoint',
+        //   data: getSettingData(name),
+        // };
+        // }
       });
     },
     nameValueArr() {
@@ -59,7 +60,8 @@ export default {
   },
   data() {
     return {
-      names: [Settings.StorageNodeAddress, Settings.StorageCyberAddress],
+      // names: [Settings.StorageNodeAddress, Settings.StorageCyberAddress],
+      names: [Settings.StorageNodeAddress],
     };
   },
 };

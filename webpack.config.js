@@ -138,6 +138,12 @@ const config = {
           if (config.mode === 'development') {
             jsonContent.content_security_policy = "script-src 'self' 'unsafe-eval'; object-src 'self'";
           }
+          if (process.env.BROWSER === 'firefox') {
+            jsonContent.browser_specific_settings = {};
+            jsonContent.browser_specific_settings.gecko = {};
+            jsonContent.browser_specific_settings.gecko.id = 'ipfs-save-page@cipherdogs.net';
+            jsonContent.browser_specific_settings.gecko.strict_min_version = '42.0';
+          }
           return JSON.stringify(jsonContent, null, 2);
         },
       },

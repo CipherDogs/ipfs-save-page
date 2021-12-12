@@ -16,6 +16,9 @@ export default {
       // return this.$store.state[StorageVars.ExtensionTabPageUrl] + '#/';
       return this.$store.state[StorageVars.IpfsUrl];
     },
+    prettyHash() {
+      return this.hash.substring(0, 10) + '...';
+    },
   },
   data() {
     return {};

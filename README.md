@@ -1,19 +1,8 @@
-# cyb~Virus
-
-![](screenshot/screenshot.png)![](screenshot/screenshot2.png)
+# ipfs-save-page
 
 ## Mission
 
 Help you fuckgoogle rigth from Firefox!
-
-## Features
-
-1. Create accounts and save mnemonic
-2. Import Account with private key or mnemonic
-3. Display and transfer CYB tokens
-4. Create cyberlinks and display bandwidth
-5. Primitive search in Cyber protocol
-6. Node config
 
 ## Firefox dev
 
