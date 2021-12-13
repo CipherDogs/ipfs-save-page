@@ -95,29 +95,32 @@ export default {
       }
       const encryptedSeed = await PermanentStorage.getValue(StorageVars.EncryptedSeed);
 
-      if (!encryptedSeed) {
-        this.loadingBackup = true;
-        getIsBackupExists()
-          .then(ipld => {
-            if (!this.loadingBackup) {
-              return;
-            }
-            this.loading = false;
-            this.loadingBackup = false;
-            if (ipld) {
-              this.$router.push({ name: 'ask-restore-backup', query: { ipld } });
-            } else {
-              this.$router.push({ name: 'new-wallet-welcome' });
-            }
-          })
-          .catch(() => {
-            this.loading = false;
-            this.loadingBackup = false;
-            this.$router.push({ name: 'new-wallet-welcome' });
-          });
-        return;
-        // return (global as any).browser.tabs.create({url: (global as any).extension.getURL('popup.html#window')});
-      }
+      // if (!encryptedSeed) {
+      //   this.loadingBackup = true;
+      //   getIsBackupExists()
+      //     .then(ipld => {
+      //       if (!this.loadingBackup) {
+      //         return;
+      //       }
+      //       this.loading = false;
+      //       this.loadingBackup = false;
+      //       if (ipld) {
+      //         this.$router.push({ name: 'ask-restore-backup', query: { ipld } });
+      //       } else {
+      //         this.$router.push({ name: 'new-wallet-welcome' });
+      //       }
+      //     })
+      //     .catch(() => {
+      //       this.loading = false;
+      //       this.loadingBackup = false;
+      //       this.$router.push({ name: 'new-wallet-welcome' });
+      //     });
+      //   return;
+      //   // return (global as any).browser.tabs.create({url: (global as any).extension.getURL('popup.html#window')});
+      // }
+
+      this.loading = false;
+      this.$route.push({ name: 'cabinet-cyberd' });
     },
     setNetwork() {
       this.networkList.some(network => {
